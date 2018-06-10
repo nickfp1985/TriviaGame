@@ -1,38 +1,34 @@
 #### JavaScript Assignment 2: TriviaGame
 
+Link to game ->  https://nickfp1985.github.io/TriviaGame/
+
 ### Overview
 
 A trivia game using JavaScript for the logic and jQuery to manipulate HTML
 
 ### Option One: Basic Quiz (Timed Form)
 
-![Basic](Images/1-basic.jpg)
-
-**[Click Here to Watch the Demo](basic-trivia-demo.mov)**.
-
-* You'll create a trivia form with multiple choice or true/false options (your choice).
+* A trivia quiz with multiple choice, or true/false options.
 
 * The player will have a limited amount of time to finish the quiz. 
 
-  * The game ends when the time runs out. The page will reveal the number of questions that players answer correctly and incorrectly.
+  * The game ends when the time runs out. The page will reveal the number of questions that player answered correctly and incorrectly.
 
-* Don't let the player pick more than one answer per question.
+* The player can only pick one answer per question.
 
-* Don't forget to include a countdown timer.
+* The player has a countdown timer.
 
 ### Option Two: Advanced Assignment (Timed Questions)
 
 ![Advanced](Images/2-advanced.jpg)
 
-**[Click Here to Watch the demo](advanced-trivia-demo.mov)**.
+* A trivia game that shows only one question until the player answers it, or their time runs out.
 
-* You'll create a trivia game that shows only one question until the player answers it or their time runs out.
-
-* If the player selects the correct answer, show a screen congratulating them for choosing the right option. After a few seconds, display the next question -- do this without user input.
+* If the player selects the correct answer, a screen will show congratulating them. After a few seconds, the next question will display -- without user input.
 
 * The scenario is similar for wrong answers and time-outs.
 
-  * If the player runs out of time, tell the player that time's up and display the correct answer. Wait a few seconds, then show the next question.
-  * If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer. Wait a few seconds, then show the next question.
+  * If the player runs out of time, the correct answer will be displayed. After a few seconds, the next question will automatically show.
+  * If the player chooses the wrong answer, the correct answer will be displayed. After a few seconds, the next question will automatically show.
 
-* On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
+* The final screen shows the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).

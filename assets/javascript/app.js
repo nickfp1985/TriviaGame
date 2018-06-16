@@ -12,7 +12,6 @@ let timer = {
     reset: function() {
     
         timer.time = 60;
-    
         // reset timer back to 60 seconds
         $("#display").text("60");
     },
@@ -30,6 +29,7 @@ let timer = {
         if (timer.time = 0) {
             clearInterval(intervalId);
             clockRunning = false;
+            timer.reset();
             alert('Your time is up!');
         }
         
@@ -39,9 +39,9 @@ let timer = {
 
         // decrement timer by 1
         timer.time--;
-
+        return time;
         // get the new time
-        let time = timer.time;
+        //let time = timer.time;
         console.log(time);
 
         // show the remaining time in the display div

@@ -39,8 +39,6 @@ let timer = {
 
         // decrement timer by 1
         timer.time--;
-        return time;
-        // get the new time
         //let time = timer.time;
         console.log(time);
 

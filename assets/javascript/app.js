@@ -1,81 +1,94 @@
-$( document ).ready(function() {
-    $("#start").on("click", timer.start);
-    console.log( "ready!" );
-});
-
-let intervalId;
-let clockRunning = false;
-let timer = {
-
-    time: 60
+$(document).ready(function() {
     
-    reset: function() {
+    let counter = 60;
+    let time;
+    let correct = 0;
+    let wrong = 0;
     
-        timer.time = 60;
-        // reset timer back to 60 seconds
-        $("#display").text("60");
-    },
+    function results() {
+        let q1 = $('input[name="q1"]:checked').val();
+        let q2 = $('input[name="q2"]:checked').val();
+        let q3 = $('input[name="q3"]:checked').val();
+        let q4 = $('input[name="q4"]:checked').val();
+        let q5 = $('input[name="q5"]:checked').val();
+        let q6 = $('input[name="q6"]:checked').val();
 
-    start: function() {
-
-        // start the countdown and set the clock to running
-        if (!clockRunning) {
-            intervalId = setInterval(timer.count, 1000);
-            clockRunning = true;
-        }
-    },
-
-    stop: function() {
-        if (timer.time = 0) {
-            clearInterval(intervalId);
-            clockRunning = false;
-            timer.reset();
-            alert('Your time is up!');
-        }
-        
-    },
-
-    count: function() {
-
-        // decrement timer by 1
-        timer.time--;
-        //let time = timer.time;
-        console.log(time);
-
-        // show the remaining time in the display div
-        $("#display").text(time);
+        if (q1 === 'correct') {
+                correct++;
+            } else {
+                wrong++;
+            }
+        if (q2 === 'correct') {
+                correct++;
+            } else {
+                wrong++;
+            }
+        if (q3 === 'correct') {
+                correct++;
+            } else {
+                wrong++;
+            }
+        if (q4 === 'correct') {
+                correct++;
+            } else {
+                wrong++;
+            }
+        if (q5 === 'correct') {
+                correct++;
+            } else {
+                wrong++;
+            }
+        if (q6 === 'correct') {
+                correct++;
+            } else {
+                wrong++;
+            }
+    };
+    
+    function timer() {
+        $('.timer').text('Time Remaining: ' + counter);
+        time = setInterval(function () {
+            counter--;
+            $('.timer').text('Time Remaining: ' + counter);
+            if (counter === 0) {
+                alert("Time is up, game over!")
+            }
+        }, 1000);
+    };
+    
+    function scorePage() {
+        results();
+        clearInterval(time);
+        $('#answers').show();
+        $('.numCorrect').text('Correct Answers: ' + correct);
+        $('.numWrong').text('Wrong Answers: ' + wrong);
+        $('#retry').show();
+        $('#finished').hide();
     }
+    
+    $('#start').click(function () {
+        timer();
+    });
+    
+    $('#finished').click(function () {
+        scorePage()
+    });
+    
+    
+    function reset() {
+        counter = 60;
+        time;
+        timer();
+        results();
+        $('input[type=radio]').prop('checked', false);
+        correct = 0;
+        wrong = 0;
+        $('.numCorrect').text('Correct Answers: ' + correct);
+        $('.numWrong').text('Wrong Answers: ' + wrong);
+    }
+    
+    $('#retry').click(function () {
+        reset()
+    });
+    
 };
-
-
-// ************************************
-//  timer.start({countdown: true, startValues: {seconds: 60}}); //set the countdown to 60 seconds
-//  
-//  $('.countdown #counter').html(timer.getTimeValues().toString());
-//  
-//  timer.addEventListener('secondsUpdated', function (e) {
-//      $('.countdown #counter').html(timer.getTimeValues().toString());
-//  });
-//  timer.addEventListener('targetAchieved', function (e) {
-//      $('.countdown #counter').alert('Game Over!');
-//  });
-// ************************************
-//function countdown(minutes) {
-//    let seconds = 60;
-//    function tick() {
-//        
-//        let counter = document.getElementById("counter");
-//        seconds--;
-//        counter.text(seconds);
-//        if( seconds > 0 ) {
-//            setTimeout(tick, 1000);
-//        } else {
-//            if(mins > 1){
-//               countdown(mins-1);           
-//            }
-//        }
-//    }
-//    tick();
-//}
-//
-//$("#start").click(countdown);

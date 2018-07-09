@@ -19,3 +19,8 @@ body,
     background: lightblue;
     color: black;
 }
+
+#answers,
+#retry {
+    display: none;
+}

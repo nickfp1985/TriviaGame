@@ -23,10 +23,9 @@
 
     <div class="card text-white bg-info mb-3" style="width: 18rem;">
       <div class="card-body countdown">
-        <h5 class="card-title">Time Remaining:</h5>
-        <div id="counter">60</div>
-        <p class="card-text">Click the START button below to begin!</p>
-        <a href="#" class="btn btn-outline-warning" id="start">START GAME</a>
+        <h5 class="card-title timer"></h5>
+        <p class="card-text">Click the START GAME button to begin!</p>
+        <button class="btn btn-outline-warning" id="start">START GAME</button>
       </div>
     </div>
 
@@ -35,66 +34,78 @@
       <div class="question-one">
         <p>(1)  Which of these was NOT a member of the original Thirteen Colonies?</p>
         <form>
-          <input type="radio" id="q1a" value="correct"> Maine<br>
-          <input type="radio" id="q1b" value="wrong"> Delaware<br>
-          <input type="radio" id="q1c" value="wrong"> New York<br>
-          <input type="radio" id="q1d" value="wrong"> Georgia
+          <input type="radio" name="q1" id="a" value="correct"> Maine<br>
+          <input type="radio" name="q1" id="b" value="wrong"> Delaware<br>
+          <input type="radio" name="q1" id="c" value="wrong"> New York<br>
+          <input type="radio" name="q1" id="d" value="wrong"> Georgia
         </form>
       </div>
 
       <div class="question-two">
         <p>(2)  Which US state saw an attack on Pearl Harbor in 1941 and the overthrowing of a queen in 1893?</p>
         <form>
-          <input type="radio" id="q2a" value="wrong"> Florida<br>
-          <input type="radio" id="q2b" value="wrong"> Alaska<br>
-          <input type="radio" id="q2c" value="correct"> Hawaii<br>
-          <input type="radio" id="q2d" value="wrong"> California
+          <input type="radio" name="q2" id="a" value="wrong"> Florida<br>
+          <input type="radio" name="q2" id="b" value="wrong"> Alaska<br>
+          <input type="radio" name="q2" id="c" value="correct"> Hawaii<br>
+          <input type="radio" name="q2" id="d" value="wrong"> California
         </form>
       </div>
 
       <div class="question-three">
         <p>(3)  Which president succeeded Abraham Lincoln when he was assassinated?</p>
         <form>
-          <input type="radio" id="q3a" value="wrong"> Franklin Pierce<br>
-          <input type="radio" id="q3b" value="correct"> Andrew Johnson<br>
-          <input type="radio" id="q3c" value="wrong"> Rutherford Hayes<br>
-          <input type="radio" id="q3d" value="wrong"> James Polk
+          <input type="radio" name="q3" id="a" value="wrong"> Franklin Pierce<br>
+          <input type="radio" name="q3" id="b" value="correct"> Andrew Johnson<br>
+          <input type="radio" name="q3" id="c" value="wrong"> Rutherford Hayes<br>
+          <input type="radio" name="q3" id="d" value="wrong"> James Polk
         </form>
       </div>
 
       <div class="question-four">
         <p>(4)  Between which years was the US Civil War fought?</p>
         <form>
-          <input type="radio" id="q4a" value="correct"> 1861-1865<br>
-          <input type="radio" id="q4b" value="wrong"> 1865-1869<br>
-          <input type="radio" id="q4c" value="wrong"> 1857-1861<br>
-          <input type="radio" id="q4d" value="wrong"> 2016-2020
+          <input type="radio" name="q4" id="a" value="correct"> 1861-1865<br>
+          <input type="radio" name="q4" id="b" value="wrong"> 1865-1869<br>
+          <input type="radio" name="q4" id="c" value="wrong"> 1857-1861<br>
+          <input type="radio" name="q4" id="d" value="wrong"> 2016-2020
         </form>
       </div>
 
       <div class="question-five">
         <p>(5)  Which year did Texas become a US State?</p>
         <form>
-          <input type="radio" id="q5a" value="wrong"> 1901<br>
-          <input type="radio" id="q5b" value="wrong"> 1873<br>
-          <input type="radio" id="q5c" value="correct">1845<br>
-          <input type="radio" id="q5d" value="wrong"> 1999
+          <input type="radio" name="q5" id="a" value="wrong"> 1901<br>
+          <input type="radio" name="q5" id="b" value="wrong"> 1873<br>
+          <input type="radio" name="q5" id="c" value="correct">1845<br>
+          <input type="radio" name="q5" id="d" value="wrong"> 1999
         </form>
       </div>
 
       <div class="question-six">
         <p>(6)  Who was the first US President to live in the White House?</p>
         <form>
-          <input type="radio" id="q6a" value="wrong"> Abraham Lincoln<br>
-          <input type="radio" id="q6b" value="wrong"> Barak Obama<br>
-          <input type="radio" id="q6c" value="correct"> John Adams<br>
-          <input type="radio" id="q6d" value="wrong"> Grover Cleveland
+          <input type="radio" name="q6" id="a" value="wrong"> Abraham Lincoln<br>
+          <input type="radio" name="q6" id="b" value="wrong"> Barak Obama<br>
+          <input type="radio" name="q6" id="c" value="correct"> John Adams<br>
+          <input type="radio" name="q6" id="d" value="wrong"> Grover Cleveland
         </form>
       </div>
 
     </div>
 
-    <div class="row"></div>
+    <button id="finished">
+        <p>Finished</p>
+    </button>
+
+    <div id="answers">
+        <p>Your Score</p><br>
+        <div class="numCorrect"></div>
+        <div class="numWrong"></div>
+    </div>
+
+    <button id="retry">
+        <p>Try Again?</p>
+    </button>
 
   <!-- JS, jQuery, Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
